@@ -1,0 +1,14 @@
+<!-- _error_messages.html.erb -->
+
+<% if flash[:error].present? %>
+  <div>
+    <div class="error_text">
+      <h2><%= "#{flash[:error].count}個のエラーがあります。" %></h2>
+      <ul>
+        <% flash[:error].each do |e| %>
+          <li><%= e %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+<% end%>

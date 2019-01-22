@@ -4,3 +4,9 @@
 <p>名前: <%= @teacher.name %></p>
 <p>作成日: <%= date_format(@teacher.created_at, '%Y年 %m月 %d日') %></p>
 <p>更新日: <%= date_format(@teacher.updated_at, '%Y年 %m月 %d日') %></p>
+
+<%= link_to '編集', edit_teacher_path(@teacher.id) %>
+<%= form_with model: @form, url: teacher_path(@teacher.id), method: :delete, local: true do %>
+  <input type="hidden" name="teacher[id]" value="<%= @form.id %>" >
+  <button type="submit">削除</button>
+<% end %>

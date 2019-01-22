@@ -12,7 +12,7 @@ class TeachersController < ApplicationController
   end
 
   def new
-    @form = Teachers::Contract::Create.new(Teracher.new)
+    @form = Teachers::Contract::Create.new(Teacher.new)
   end
 
   def create
@@ -24,7 +24,7 @@ class TeachersController < ApplicationController
       flash[:error] = translate_validation_errors(result)
       render 'new'
     else
-      redirect_to teachers_path, flash: { notice: 'Teacherを作成しました' }
+      redirect_to teachers_path, flash: { notice: 'Teacher を作成しました。' }
     end
   end
 

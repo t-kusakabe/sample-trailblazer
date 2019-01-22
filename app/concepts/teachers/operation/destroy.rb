@@ -1,4 +1,4 @@
-class Teachers::Operation::Destroy < Applicatioon
+class Teachers::Operation::Destroy < ApplicationOperation
   step :validate
   failure :handle_validation_error, fail_fast: true
   step :presist!

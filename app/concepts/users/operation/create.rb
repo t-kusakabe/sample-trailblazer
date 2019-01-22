@@ -9,7 +9,7 @@ class Users::Operation::Create < ApplicationOperation
   def validate(options, params)
     contract = Users::Contract::Create.new(User.new)
     contract.name = params[:name]
-    contract.teacher_id = prams[:teacher_id]
+    contract.teacher_id = params[:teacher_id]
     options['contract'] = contract
     contract.valid?
   end

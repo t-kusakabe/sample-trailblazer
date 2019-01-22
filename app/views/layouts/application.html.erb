@@ -15,9 +15,7 @@
     <% flash.each do |message_type, messages| %>
       <% if message_type == 'alert' || message_type == 'notice' || message_type == 'info' || message_type == 'warning' %>
         <div class="flash_explanation_<%= message_type %>">
-          <% messages.each do |message| %>
-            <p><%= message %></p>
-          <% end %>
+            <p><%= messages %></p>
         </div>
       <% end %>
     <% end %>

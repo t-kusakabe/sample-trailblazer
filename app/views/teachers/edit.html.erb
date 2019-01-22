@@ -1,0 +1,9 @@
+<!-- edit.html.erb -->
+
+<%= form_with model: @form, url: teacher_path, method: :patch, local: true do %>
+  <%= render 'shared/error_messages' %>
+
+  <label>名前</label>
+  <input type="text" name="teacher[name]" value="<%= @form.name %>" placeholder="名前" />
+  <button type="submit">登録する</button>
+<% end %>

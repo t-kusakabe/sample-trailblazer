@@ -1,5 +1,15 @@
 class TeachersController < ApplicationController
-  def index; end
+  def index
+    if params[:name].nil?
+      @teachers = Teacner.all
+    else
+      @teachers = Teacher.where(name: params[:name])
+    end
+  end
+
+  def show
+    @teacher = Teacher.find(params[:id])
+  end
 
   def new
     @form = Teachers::Contract::Create.new(Teracher.new)

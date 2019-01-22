@@ -46,4 +46,17 @@ class TeachersController < ApplicationController
       redirect_to teachers_path, flash: { notice: 'Teacher を更新しました' }
     end
   end
+
+  def destroy
+    teacher_params = params.require(:teacher).permit(:id)
+    
+    result = Teachers::Operation::Destroy.call(teacher_params)
+
+    if result['validation_errors'].present?
+      @form = result['contract']
+      redirect_to teachers_path, flash: { alert: translate_validation_errors(result) }
+    else
+      redirect_to teachers_path, flash: { notice: 'Teacher を削除しました。' }
+    end
+  end
 end

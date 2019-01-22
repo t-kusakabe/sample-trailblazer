@@ -14,7 +14,7 @@ class Teachers::Operation::Update < ApplicationOperation
     contract.valid?
   end
 
-  def persist!
+  def persist!(options, **)
     contract = options['contract']
     model = Teacher.find(contract.id)
     model.name = contract.name

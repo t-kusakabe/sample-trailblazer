@@ -1,0 +1,16 @@
+<!-- new.html.erb -->
+
+<%= form_with model: @form, url: users_path, method: :post, local: true do %>
+  <%= render 'shared/error_messages' %>
+
+  <label>教師</label>
+  <select name="user[teacher_id]">
+    <% @teachers.each do |teacher| %>
+      <option value="<%= teacher.id %>"><%= teacher.name %></option>
+    <% end %>
+  </select>
+
+  <label>名前</label>
+  <input type="text" name="user[name]" value="<%= @form.name %>" placeholder="名前" />
+  <button type="submit">登録する</button>
+<% end %>

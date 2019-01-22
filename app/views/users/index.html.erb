@@ -1,0 +1,10 @@
+<!-- index.html.erb -->
+
+<% @users.each do |user| %>
+  <p>ID: <%= user.id %></p>
+  <p>名前: <%= user.name %></p>
+  <p>教師名: <%= user.teacher.name %></p>
+  <p>作成日: <%= date_format(user.created_at, '%Y年 %m月 %d日') %></p>
+  <p>更新日: <%= date_format(user.updated_at, '%Y年 %m月 %d日') %></p>
+  <hr>
+<% end %>

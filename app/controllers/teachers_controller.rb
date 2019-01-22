@@ -1,7 +1,7 @@
 class TeachersController < ApplicationController
   def index
     if params[:name].nil?
-      @teachers = Teacner.all
+      @teachers = Teacher.all
     else
       @teachers = Teacher.where(name: params[:name])
     end

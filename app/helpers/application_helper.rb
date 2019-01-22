@@ -7,4 +7,8 @@ module ApplicationHelper
       "#{page_title}" | "#{base_title}"
     end
   end
+
+  def date_format(date, format)
+    date.strftime(format)
+  end
 end

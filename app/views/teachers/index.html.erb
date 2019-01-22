@@ -1,1 +1,15 @@
 <!-- index.html.erb -->
+
+<%= form_with url: teachers_path, method: :get, local: true do %>
+  <label>名前</label>
+  <input type="text" name="name" placeholder="名前"/>
+  <button type="submit">検索する</button>
+<% end %>
+
+<% @teachers.each do |teacher| %>
+  <p>ID: <%= link_to teacher.id, teacher_path(teacher.id) %></p>
+  <p>名前: <%= teacher.name %></p>
+  <p>作成日: <%= date_format(teacher.created_at, '%Y年 %m月 %d日') %></p>
+  <p>更新日: <%= date_format(teacher.updated_at, '%Y年 %m月 %d日') %></p>
+  <hr>
+<% end %>

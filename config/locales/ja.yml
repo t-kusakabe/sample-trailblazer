@@ -212,3 +212,7 @@ ja:
       teacher:
         id: "ID"
         name: "名前"
+      user:
+        id: "ID"
+        name: "名前"
+        teacher_id: "Teacher ID"
